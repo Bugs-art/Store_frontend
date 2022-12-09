@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# first time:
+git push -u origin master
+
+# after first time:
+git push
