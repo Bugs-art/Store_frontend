@@ -1,127 +1,100 @@
 import './navBar.css';
 import DataContext from '../state/dataContext';
 import { useContext} from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 function NavBar() {
   const cart = useContext(DataContext).cart;
 
+  const countProducts = () => {
+    let total = 0;
+    for (let i =0; i<cart.length; i++) {
+      const prod = cart[i];
+      total += prod.quantity;
+    }
+      
+
+    return total; 
+  };
+
   return (
 
     <nav className="navbar navbar-expand-lg navbar-dark">
 
       <div className="container-fluid">
-        <Link className="navbar-brand"></Link>
-
-        <a class="navbar-brand" href="#">
-
+        <Link className="navbar-brand" to="/">
+          
           Navbar
+ 
+        </Link>
 
-        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"                 
+          aria-controls="navbarSupportedContent" aria-expanded="false"aria-label="Toggle navigation">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
 
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+              
             <li class="nav-item">
 
-              <a class="nav-link active" aria-current="page" href="#">
-
+              <Link className="nav-link active" aria-current="page" to= "/home">
                 Home
-
-              </a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-link" href="#">
-
-                Link
-
-              </a>
+              </Link>
 
             </li>
 
+            <li className="nav-item">
 
-            <li class="nav-item dropdown">
 
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                Dropdown
-
-              </a>
-
-              <ul class="dropdown-menu">
-
-                <li>
-
-                  <a class="dropdown-item" href="#">
-
-                    Action
-
-                  </a>
-
-                </li>
-
-                <li>
-
-                  <a class="dropdown-item" href="#">
-
-                    Another action
-
-                  </a>
-
-                </li>
-
-                <li>
-
-                  <hr class="dropdown-divider" />
-
-                </li>
-
-                <li>
-
-                  <a class="dropdown-item" href="#">
-
-                    Something else here
-
-                  </a>
-
-                </li>
-
-              </ul>
+             <Link className="nav-link active" aria-current="page" to= "/catalog">
+                Catalog
+              </Link>
 
             </li>
 
-            <li class="nav-item">
 
-              <a class="nav-link disabled">Disabled</a>
+            <li className="nav-item">
+
+              <Link className="nav-link active" aria-current="page" to= "/about">
+                About me
+              </Link>
+
+              
+
+            </li>
+            
+            <li className="nav-item">
+
+              <Link className="nav-link active" aria-current="page" to= "/admin">
+                  Admin
+              </Link>
 
             </li>
 
           </ul>
 
+          <form className="d-flex" role="search">
+            <Link className="btn btn-outline-sucess" to="/cart">
+              
 
-
-            <form class="d-flex" role="search">
-              <Link className="btn btn-outline-sucess" to="/cart">
-
-                <span className="badge text-bg-light">{cart.length}</span>
-                &nbsp;View Cart
+              <span className="badge text-bg-light">{countProducts()}</span>
+              &nbsp;View Cart
                 
-              </Link>
+            </Link>
             
 
-            </form>
+          </form>
+          
+
+
+
+          
 
         </div>
 
@@ -134,3 +107,5 @@ function NavBar() {
 }
 
 export default NavBar;
+// create catalog page
+//register the url on app.js to display the page on /cart path

@@ -12,12 +12,12 @@ const catalog = [
         _id: '2',
         price: 22.71,
         title: 'Strawberry',
-        image: 'img-2.jpg',
+        image: 'product-6.jpg',
         category:'Fruit',
         
     },
     {
-        _id: '3',
+        _id: 'asvdooy123',
         price: 32.0,
         title: 'Bell pepper',
         image: 'img-3.jpg',
@@ -98,4 +98,4 @@ class DataService {
 }
 
 
-export default DataService;
+export default DataService;   

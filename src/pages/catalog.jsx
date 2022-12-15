@@ -1,4 +1,4 @@
-import Product from "../components/product";
+import Product from '../components/product';
 import './catalog.css';
 import { useEffect, useState } from 'react';
 import DataService from '../services/dataService';
@@ -16,7 +16,7 @@ function Catalog(){
     };
 
     //exec when the component is displayed
-    useEffect(() => {
+    useEffect(() => {  
         loadCatalog();
         
 

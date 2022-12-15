@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Cart from './pages/cart';
 
 
 function App() {
@@ -20,14 +21,17 @@ function App() {
     
       <BrowserRouter>
         <div>
-            <NavBar></NavBar>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='home' element={<Home />} />
-              <Route path='/catalog' element={<Catalog />} />
-              <Routes path='/about' element={<About />} />
-              <Routes path='/admin' element={<Admin />} />
-            </Routes>
+          <NavBar></NavBar>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+
       
           <Footer></Footer>
         </div>
