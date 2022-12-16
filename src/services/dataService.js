@@ -72,7 +72,7 @@ const catalog = [
 class DataService {
 
     async getCatalog(){
-        //return catalog;
+        // return catalog;
 
         //TODO: get the catalog from the server
         let result = await axios.get("http://127.0.0.1:5000/api/catalog");

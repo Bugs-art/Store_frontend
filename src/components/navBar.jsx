@@ -21,7 +21,7 @@ function NavBar() {
 
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
@@ -83,7 +83,7 @@ function NavBar() {
             <Link className="btn btn-outline-sucess" to="/cart">
               
 
-              <span className="badge text-bg-light">{countProducts()}</span>
+              <span className="badge text-bg-light">{cart.length}</span>
               &nbsp;View Cart
                 
             </Link>

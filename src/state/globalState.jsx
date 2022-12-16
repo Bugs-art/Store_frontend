@@ -13,7 +13,7 @@ const GlobalState = (props) => {
       let found = false;
 
       for(let i=0; i<cart.length; i++) {
-         let existing = cart[i];
+         let existing = copy[i];
          if(existing._id === product._id){
             existing.quantity += product.quantity;
             found = true;
