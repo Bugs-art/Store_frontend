@@ -8,7 +8,7 @@ const Admin = () => {
    const [allProducts, setAllProducts] = useState([]);
 
    const [couponCode, setCouponCode] = useState({});
-   const [allCoupons, setAllCoupons] = useState({});
+   const [allCoupons, setAllCoupons] = useState([]);
   
    useEffect(() =>{
       loadProductsFromServer();
@@ -82,26 +82,24 @@ const Admin = () => {
                <h5>Save Product</h5>
 
                <div className="my-control">
-                  <label>Title</label>
-                  <input name="title" onBlur={productValChange} type="text"/>
+                  
+                  <input placeholder="Enter title" name="title" onBlur={productValChange} type="text"/>
+                  
+               </div>
+
+               <div className="my-control">
+                  
+                  <input placeholder="Enter image" name="image" onBlur={productValChange} type="text"/>
 
                </div>
 
                <div className="my-control">
-                  <label>Image</label>
-                  <input name="image" onBlur={productValChange} type="text"/>
+                  <input placeholder="Enter category" name="category" onBlur={productValChange} type="text"/>
 
                </div>
 
                <div className="my-control">
-                  <label>Category</label>
-                  <input name="category" onBlur={productValChange} type="text"/>
-
-               </div>
-
-               <div className="my-control">
-                  <label>Price</label>
-                  <input name="price" onBlur={productValChange} type="text"/>
+                  <input placeholder="Enter price" name="price" onBlur={productValChange} type="text"/>
 
                </div>
 
@@ -127,14 +125,13 @@ const Admin = () => {
             </div>
 
             <div className="my-control">
-               <label>Code</label>
-               <input name="code" onBlur={couponValChange} type="text" />
+               <input placeholder="Enter code" name="code" onBlur={couponValChange} type="text" />
 
             </div>
 
             <div className="my-control">
-               <label>Discount</label>
-               <input name="discount" onBlur={couponValChange} type="number" />
+               
+               <input placeholder="Enter Discount" name="discount" onBlur={couponValChange} type="number" />
 
             </div>
 

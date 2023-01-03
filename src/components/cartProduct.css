@@ -3,6 +3,7 @@
     border: 1px solid #dbdbdb;
     margin-bottom: 20px;
     display: flex;
+    align-items: center;
 }
 
 .cart-product img {
